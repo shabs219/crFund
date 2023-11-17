@@ -27,7 +27,7 @@ contract CrowdFunding {
 	function withdraw() public {
 		require(_owner == msg.sender, "not Owner");
         uint256 amount = _asset.balanceOf(address(this));
-        // _asset.approve(msg.sender, amount);
+        _asset.approve(address(this), amount);
 		_asset.transferFrom(address(this), msg.sender, amount);
 	}
 }

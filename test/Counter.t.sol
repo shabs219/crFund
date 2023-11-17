@@ -58,8 +58,8 @@ contract CrowdFundingTest is Test {
 		console2.log(msg.sender);
 		console2.log(crowdFunding._owner());
 
-		vm.prank(address(crowdFunding));
-		token.approve(msg.sender, 10);
+		// vm.prank(address(crowdFunding));
+		// token.approve(address(crowdFunding), 10);
 		vm.prank(msg.sender);
 		crowdFunding.withdraw();
 
